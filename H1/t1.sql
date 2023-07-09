@@ -1,0 +1,3 @@
+SELECT *
+FROM tea
+ORDER BY id ASC:
