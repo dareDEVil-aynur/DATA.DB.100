@@ -1,0 +1,17 @@
+The WHERE clause in an SQL query is used to filter records. In your question, we're evaluating the truth value of different conditions. These evaluations will use a table row where id is 50, name is 'K2', continent is 'Aasia', and no height value is provided. The truth value of each condition would be as follows:
+
+1. `NOT name = 'K2'`: This checks if the name is not 'K2'. Since the name is 'K2', this condition is `False`.
+
+2. `NOT height = 4811`: This checks if the height is not 4811. Since no height is given, this condition is `True`.
+
+3. `name <> 'Rakaposhi' OR NOT height = 4811`: This checks if the name is not 'Rakaposhi' or the height is not 4811. Since the name is 'K2' and no height is given, this condition is `True`.
+
+4. `name = 'Rakaposhi' OR NOT height = 4811`: This checks if the name is 'Rakaposhi' or the height is not 4811. Since the name is not 'Rakaposhi' and no height is given, this condition is `True`.
+
+5. `name = 'K2' AND height = 8611`: This checks if the name is 'K2' and the height is 8611. Since the name is 'K2' but no height is given, this condition is `False`.
+
+6. `name = 'Rakaposhi' AND height = 8611`: This checks if the name is 'Rakaposhi' and the height is 8611. Since the name is not 'Rakaposhi' and no height is given, this condition is `False`.
+
+7. `(id > 10 OR continent = 'Eurooppa') AND height = 8611`: This checks if the id is more than 10 or the continent is 'Eurooppa', and if the height is 8611. While the id is indeed more than 10, there is no height given. Hence, this condition is `False`.
+
+8. `id > 10 OR continent = 'Eurooppa' AND height = 8611`: This checks if the id is more than 10, or if the continent is 'Eurooppa' and the height is 8611. The id is indeed more than 10, so this condition is `True`. Remember that the `AND` operator has higher precedence than `OR`, but since the `AND` condition is `False`, the entire condition is still `True` because of the `OR` operator.
